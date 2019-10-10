@@ -1,0 +1,17 @@
+C:\Users\Wojciech Kowalczyk\AppData\Local\Temporary Projects\Cost_Timer\bin\Debug\Cost_Timer.exe
+C:\Users\Wojciech Kowalczyk\AppData\Local\Temporary Projects\Cost_Timer\bin\Debug\Cost_Timer.pdb
+C:\Users\Wojciech Kowalczyk\AppData\Local\Temporary Projects\Cost_Timer\bin\Debug\Cost_Timer.xml
+C:\Users\Wojciech Kowalczyk\AppData\Local\Temporary Projects\Cost_Timer\obj\x86\Debug\Cost_Timer.Resources.resources
+C:\Users\Wojciech Kowalczyk\AppData\Local\Temporary Projects\Cost_Timer\obj\x86\Debug\Cost_Timer.vbproj.GenerateResource.Cache
+C:\Users\Wojciech Kowalczyk\AppData\Local\Temporary Projects\Cost_Timer\obj\x86\Debug\Cost_Timer.exe
+C:\Users\Wojciech Kowalczyk\AppData\Local\Temporary Projects\Cost_Timer\obj\x86\Debug\Cost_Timer.xml
+C:\Users\Wojciech Kowalczyk\AppData\Local\Temporary Projects\Cost_Timer\obj\x86\Debug\Cost_Timer.pdb
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.exe
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.xml
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.pdb
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\bin\Debug\Cost_Timer.exe
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\bin\Debug\Cost_Timer.pdb
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\bin\Debug\Cost_Timer.xml
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.Form1.resources
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.Resources.resources
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.vbproj.GenerateResource.Cache

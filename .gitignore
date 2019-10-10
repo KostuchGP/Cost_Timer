@@ -1,0 +1,8 @@
+﻿# Items not tracked:
+Cost_Timer.vshost.exe.manifest
+Cost_Timer.suo
+Cost_Timer/bin/Debug/Cost_Timer.exe
+Cost_Timer/bin/Debug/Cost_Timer.pdb
+Cost_Timer/obj/x86/Debug/Cost_Timer.exe
+Cost_Timer/obj/x86/Debug/Cost_Timer.pdb
+Cost_Timer/obj/x86/Debug/Cost_Timer.vbproj.GenerateResource.Cache
