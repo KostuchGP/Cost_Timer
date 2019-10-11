@@ -26,16 +26,17 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LbNM = New System.Windows.Forms.Label()
-        Me.txtNM = New System.Windows.Forms.TextBox()
+        Me.txtBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.test1 = New System.Windows.Forms.Button()
         Me.btnendwork = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnstop = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnstart = New System.Windows.Forms.Button()
-        Me.ComBoxPyt1 = New System.Windows.Forms.ComboBox()
+        Me.ComBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtBoxConsole = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,23 +54,24 @@ Partial Class Form1
         Me.LbNM.TabIndex = 0
         Me.LbNM.Text = "Project"
         '
-        'txtNM
+        'txtBox1
         '
-        Me.txtNM.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNM.Location = New System.Drawing.Point(138, 56)
-        Me.txtNM.Name = "txtNM"
-        Me.txtNM.Size = New System.Drawing.Size(156, 26)
-        Me.txtNM.TabIndex = 2
+        Me.txtBox1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBox1.Location = New System.Drawing.Point(138, 56)
+        Me.txtBox1.Name = "txtBox1"
+        Me.txtBox1.Size = New System.Drawing.Size(156, 26)
+        Me.txtBox1.TabIndex = 2
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.test1)
         Me.GroupBox1.Controls.Add(Me.btnendwork)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.btnstop)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.btnstart)
-        Me.GroupBox1.Controls.Add(Me.ComBoxPyt1)
-        Me.GroupBox1.Controls.Add(Me.txtNM)
+        Me.GroupBox1.Controls.Add(Me.ComBox1)
+        Me.GroupBox1.Controls.Add(Me.txtBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.LbNM)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
@@ -78,6 +80,15 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Dane wejściowe"
+        '
+        'test1
+        '
+        Me.test1.Location = New System.Drawing.Point(233, 92)
+        Me.test1.Name = "test1"
+        Me.test1.Size = New System.Drawing.Size(87, 35)
+        Me.test1.TabIndex = 6
+        Me.test1.Text = "test"
+        Me.test1.UseVisualStyleBackColor = True
         '
         'btnendwork
         '
@@ -126,15 +137,15 @@ Partial Class Form1
         Me.btnstart.Text = "Start"
         Me.btnstart.UseVisualStyleBackColor = True
         '
-        'ComBoxPyt1
+        'ComBox1
         '
-        Me.ComBoxPyt1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComBoxPyt1.Items.AddRange(New Object() {"DMA", "DKO", "DMO", "19003", "19035"})
-        Me.ComBoxPyt1.Location = New System.Drawing.Point(6, 56)
-        Me.ComBoxPyt1.Name = "ComBoxPyt1"
-        Me.ComBoxPyt1.Size = New System.Drawing.Size(126, 24)
-        Me.ComBoxPyt1.TabIndex = 1
-        Me.ComBoxPyt1.Tag = ""
+        Me.ComBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComBox1.Items.AddRange(New Object() {"DMA", "DKO", "DMO", "OP40", "19003", "19035"})
+        Me.ComBox1.Location = New System.Drawing.Point(6, 56)
+        Me.ComBox1.Name = "ComBox1"
+        Me.ComBox1.Size = New System.Drawing.Size(126, 24)
+        Me.ComBox1.TabIndex = 1
+        Me.ComBox1.Tag = ""
         '
         'Label1
         '
@@ -147,13 +158,16 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Activities:"
         '
-        'TextBox1
+        'txtBoxConsole
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 157)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(458, 186)
-        Me.TextBox1.TabIndex = 0
+        Me.txtBoxConsole.BackColor = System.Drawing.Color.Black
+        Me.txtBoxConsole.ForeColor = System.Drawing.Color.White
+        Me.txtBoxConsole.Location = New System.Drawing.Point(12, 157)
+        Me.txtBoxConsole.Multiline = True
+        Me.txtBoxConsole.Name = "txtBoxConsole"
+        Me.txtBoxConsole.ReadOnly = True
+        Me.txtBoxConsole.Size = New System.Drawing.Size(458, 186)
+        Me.txtBoxConsole.TabIndex = 0
         '
         'Form1
         '
@@ -161,7 +175,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(482, 355)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtBoxConsole)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(500, 450)
@@ -176,15 +190,16 @@ Partial Class Form1
     End Sub
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents LbNM As System.Windows.Forms.Label
-    Friend WithEvents txtNM As System.Windows.Forms.TextBox
+    Friend WithEvents txtBox1 As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents ComBoxPyt1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnendwork As System.Windows.Forms.Button
     Friend WithEvents btnstop As System.Windows.Forms.Button
     Friend WithEvents btnstart As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtBoxConsole As System.Windows.Forms.TextBox
+    Friend WithEvents test1 As System.Windows.Forms.Button
 
 End Class

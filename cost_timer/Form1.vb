@@ -6,13 +6,18 @@ Public Class Form1
     Public ver As String = "1.1"
     Public excelSheets As Excel.Sheets
     Dim StyleNaglowekModulu As Excel.Style
+    Dim z1 As Date 'zmienna 1 czas startu
+    Dim z2 As Date 'zmienna 2 czas stopu
+    Dim z3 As Integer = 0 'zmienna to liczenia wystąpienia
+    Dim z4 As Boolean = False 'zmienna sprawdzanie czy start został zresetowany
 
-    Public Zestawienie = New 
+    'Definicja tablicy do przechowywania danych godzin
+    Public zestawienie(6, z3) As String
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Timer1.Start()
+        txtBoxConsole.Text = DateTime.Now.ToString("yyyy-MM-dd")
     End Sub
-
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Label2.Text = TimeOfDay.ToString("h:mm:ss tt")
@@ -23,7 +28,7 @@ Public Class Form1
         Dim Excel As Object = CreateObject("Excel.Application")
         Dim excelApp As Excel.Application = New Excel.Application()
         Dim excelBook As Excel.Workbook
-        Dim strPath As String = "C:\Wzor.xlsm"
+        Dim strPath As String = "C:\Godziny.xlsm"
         excelBook = excelApp.Workbooks.Open(strPath, 0, False, 5, _
             System.Reflection.Missing.Value, System.Reflection.Missing.Value, _
             False, System.Reflection.Missing.Value, System.Reflection.Missing.Value, _
@@ -35,21 +40,26 @@ Public Class Form1
 
         Dim myreccnt As Long
 
-        myreccnt = GetFilteredPivotRowCount("KALKULACJA", "B:B")
+        myreccnt = GetFilteredPivotRowCount("CZAS", "A:A")
 
+        excelSheet.Cells(myreccnt, 1) = DateTime.Now.ToString("yyyy-MM-dd")
+        excelSheet.Range("A" & myreccnt).Font.Bold = True
+        myreccnt += 1
 
-        For i = 0 To LvwMain.Items.Count - 1
-            For j = 0 To LvwMain.Items(i).SubItems.Count - 1
-                excelSheet.Cells(i + myreccnt, j + 2) = LvwMain.Items(i).SubItems(j).Text
+        For i = 0 To z3
+            'For j = 0 To LvwMain.Items(i).SubItems.Count - 1
+            'excelSheet.Cells(i + myreccnt, j + 2) = LvwMain.Items(i).SubItems(j).Text
+            excelSheet.Cells(i + myreccnt, 1) = zestawienie(0, i)
+            excelSheet.Cells(i + myreccnt, 4) = zestawienie(3, i)
+            excelSheet.Cells(i + myreccnt, 7) = zestawienie(6, i)
 
-                If i = 0 And j = 0 Then
-                    excelSheet.Range("B" & myreccnt).Font.Bold = True
-                    excelSheet.Range("B" & myreccnt).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow)
-                End If
-            Next
+            '   If i = 0 And j = 0 Then
+            '        excelSheet.Range("A" & myreccnt).Font.Bold = True
+            'excelSheet.Range("A" & myreccnt).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow)
+            '     End If
+            '   Next
         Next
-        txtSuma.Text = excelSheet.Range("P4").Value
-        excelBook.SaveCopyAs()
+        excelBook.Save()
         excelBook.Close()
         excelApp.Quit()
 
@@ -58,15 +68,69 @@ Public Class Form1
             Return
         End If
 
+        Me.Close()
     End Sub
     Function GetFilteredPivotRowCount(ByVal sheetname As String, ByVal cntrange As String) As Long
-
         Dim reccnt As Long
 
         reccnt = excelSheets(sheetname).Range(cntrange).SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeVisible).SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeConstants).Count + 1
 
         GetFilteredPivotRowCount = reccnt
         'MsgBox(GetFilteredPivotRowCount)
-
     End Function
+
+    Private Sub btnstart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnstart.Click
+        Wpis_Start()
+    End Sub
+
+    Private Sub Wpis_Start()
+        If ComBox1.Text = Nothing Then Exit Sub
+        If txtBox1.Text = Nothing Then Exit Sub
+        If z4 = True Then Exit Sub
+        zestawienie(0, z3) = ComBox1.Text
+        zestawienie(3, z3) = txtBox1.Text
+        z3 += 1
+        z1 = DateTime.Now
+        z4 = True
+        ReDim Preserve zestawienie(6, z3)
+    End Sub
+
+    Private Sub test1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles test1.Click
+        For Each element1 In zestawienie
+            MsgBox(element1)
+            ' If ele Then
+        Next
+    End Sub
+
+    Function calculationMinutes(ByVal z1 As Date, ByVal z2 As Date) As String
+        Dim result As String
+        Dim cal As TimeSpan = z2 - z1
+        Dim a As Integer
+        a = cal.TotalMinutes
+        result = a.ToString
+        Return result
+    End Function
+
+    Private Sub btnstop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnstop.Click
+        Wpis_Minutes()
+    End Sub
+
+    Private Sub txtBox1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtBox1.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Wpis_Minutes()
+            Wpis_Start()
+        Else
+            Exit Sub
+        End If
+        e.SuppressKeyPress = True
+    End Sub
+
+    Private Sub Wpis_Minutes()
+        If z3 = 0 Then Exit Sub
+        If z4 = False Then Exit Sub
+        z2 = DateTime.Now
+        zestawienie(6, z3 - 1) = calculationMinutes(z1, z2)
+        z4 = False
+        txtBoxConsole.Text &= Environment.NewLine & zestawienie(0, z3 - 1) & Microsoft.VisualBasic.Chr(32) & zestawienie(3, z3 - 1) & Microsoft.VisualBasic.Chr(32) & zestawienie(6, z3 - 1)
+    End Sub
 End Class
