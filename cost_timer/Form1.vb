@@ -20,8 +20,11 @@ Public Class Form1
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        Label2.Text = TimeOfDay.ToString("h:mm:ss tt")
+        Dim date1 As DateTime = DateTime.Now
         Label3.Text = DateTime.Now.ToString()
+        If date1.Hour.ToString = "16" Then
+            btnendwork_Click(sender, e)
+        End If
     End Sub
 
     Private Sub btnendwork_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnendwork.Click
@@ -80,6 +83,7 @@ Public Class Form1
     End Function
 
     Private Sub btnstart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnstart.Click
+        Wpis_Minutes()
         Wpis_Start()
     End Sub
 
@@ -93,13 +97,6 @@ Public Class Form1
         z1 = DateTime.Now
         z4 = True
         ReDim Preserve zestawienie(6, z3)
-    End Sub
-
-    Private Sub test1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles test1.Click
-        For Each element1 In zestawienie
-            MsgBox(element1)
-            ' If ele Then
-        Next
     End Sub
 
     Function calculationMinutes(ByVal z1 As Date, ByVal z2 As Date) As String
@@ -126,11 +123,31 @@ Public Class Form1
     End Sub
 
     Private Sub Wpis_Minutes()
-        If z3 = 0 Then Exit Sub
+        If ComBox1.Text = Nothing Then Exit Sub
+        If txtBox1.Text = Nothing Then Exit Sub
+        If z3 = 0 Then
+            txtBoxConsole.Text &= Environment.NewLine & "Naliczanie czasu pracy rozpoczęte..."
+            Exit Sub
+        End If
         If z4 = False Then Exit Sub
         z2 = DateTime.Now
         zestawienie(6, z3 - 1) = calculationMinutes(z1, z2)
         z4 = False
         txtBoxConsole.Text &= Environment.NewLine & zestawienie(0, z3 - 1) & Microsoft.VisualBasic.Chr(32) & zestawienie(3, z3 - 1) & Microsoft.VisualBasic.Chr(32) & zestawienie(6, z3 - 1)
     End Sub
+
+    Private Sub MenuStrip1_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
+        MsgBox("Version: 1.00" & vbCrLf & "Author: Grzegorz Pawęzowski" & vbCrLf & "License: All right reserved Grzegorz Pawezowski 2019", vbInformation, "Information")
+    End Sub
+
+    Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
+        Dim url As String = "http://http://www.sda.org.pl/"
+        Process.Start(url)
+    End Sub
+
+
 End Class

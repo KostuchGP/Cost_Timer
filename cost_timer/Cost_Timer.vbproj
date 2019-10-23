@@ -125,6 +125,9 @@
   <ItemGroup>
     <None Include="sda_2019_sgB_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sda1.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

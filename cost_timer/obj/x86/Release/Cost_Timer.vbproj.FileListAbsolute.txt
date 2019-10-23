@@ -7,3 +7,4 @@ C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cos
 C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Release\Cost_Timer.exe
 C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Release\Cost_Timer.xml
 C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Release\Cost_Timer.pdb
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Release\Cost_Timer.vbprojResolveAssemblyReference.cache

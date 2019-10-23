@@ -6,3 +6,6 @@ Cost_Timer/bin/Debug/Cost_Timer.pdb
 Cost_Timer/obj/x86/Debug/Cost_Timer.exe
 Cost_Timer/obj/x86/Debug/Cost_Timer.pdb
 Cost_Timer/obj/x86/Debug/Cost_Timer.vbproj.GenerateResource.Cache
+Cost_Timer/obj/x86/Release/DesignTimeResolveAssemblyReferences.cache
+Cost_Timer/obj/x86/Release/Cost_Timer.vbprojResolveAssemblyReference.cache
+Cost_Timer/obj/x86/Debug/Cost_Timer.vbprojResolveAssemblyReference.cache

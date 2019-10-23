@@ -15,3 +15,4 @@ C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cos
 C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.Form1.resources
 C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.Resources.resources
 C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.vbproj.GenerateResource.Cache
+C:\Users\Wojciech Kowalczyk\documents\visual studio 2010\Projects\Cost_Timer\Cost_Timer\obj\x86\Debug\Cost_Timer.vbprojResolveAssemblyReference.cache
