@@ -1,6 +1,5 @@
 ﻿Aktualne:
-* Poprawny Export danych
-
-
+* Wczytywanie z pliku txt numery projektów do ComboBox'a
+* Jak zrobić plik Ico z Png, aby nie miał statycznego tła.
 
 Na później:

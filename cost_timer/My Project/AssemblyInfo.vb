@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Cost_Timer")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Microsoft")> 
+<Assembly: AssemblyCompany("Grzegorz Pawezowski")> 
 <Assembly: AssemblyProduct("Cost_Timer")> 
-<Assembly: AssemblyCopyright("Copyright © Microsoft 2019")> 
+<Assembly: AssemblyCopyright("Copyright © Grzegorz Pawezowski 2019")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
