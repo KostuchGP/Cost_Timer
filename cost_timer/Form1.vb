@@ -10,6 +10,7 @@ Public Class Form1
     Dim z2 As Date 'zmienna 2 czas stopu
     Dim z3 As Integer = 0 'zmienna to liczenia wystąpienia
     Dim z4 As Boolean = False 'zmienna sprawdzanie czy start został zresetowany
+    Dim SumCombo As String
 
     'Definicja tablicy do przechowywania danych godzin
     Public zestawienie(6, z3) As String
@@ -92,7 +93,39 @@ Public Class Form1
         If txtBox1.Text = Nothing Then Exit Sub
         If z4 = True Then Exit Sub
         zestawienie(0, z3) = ComBox1.Text
-        zestawienie(3, z3) = txtBox1.Text
+        If ComBox2.Text = Nothing Then
+            zestawienie(3, z3) = txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 0 Then
+            zestawienie(3, z3) = "Wycena - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 1 Then
+            zestawienie(3, z3) = "m - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 2 Then
+            zestawienie(3, z3) = "r - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 3 Then
+            zestawienie(3, z3) = "d - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 4 Then
+            zestawienie(3, z3) = "s - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 5 Then
+            zestawienie(3, z3) = "p - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 6 Then
+            zestawienie(3, z3) = "lm - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 7 Then
+            zestawienie(3, z3) = "mod - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 8 Then
+            zestawienie(3, z3) = "dod - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 9 Then
+            zestawienie(3, z3) = "mon - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 10 Then
+            zestawienie(3, z3) = "sk - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 11 Then
+            zestawienie(3, z3) = "sa - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 12 Then
+            zestawienie(3, z3) = "so - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 13 Then
+            zestawienie(3, z3) = "t - " + txtBox1.Text
+        ElseIf ComBox2.SelectedIndex = 14 Then
+            zestawienie(3, z3) = "k - " + txtBox1.Text
+        End If
         z3 += 1
         z1 = DateTime.Now
         z4 = True
@@ -141,13 +174,11 @@ Public Class Form1
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
-        MsgBox("Version: 1.00" & vbCrLf & "Author: Grzegorz Pawęzowski" & vbCrLf & "License: All right reserved Grzegorz Pawezowski 2019", vbInformation, "Information")
+        MsgBox("Version: 1.10" & vbCrLf & "Author: Grzegorz Pawęzowski" & vbCrLf & "License: All right reserved Grzegorz Pawezowski 2019", vbInformation, "Information")
     End Sub
 
     Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
         Dim url As String = "http://http://www.sda.org.pl/"
         Process.Start(url)
     End Sub
-
-
 End Class
